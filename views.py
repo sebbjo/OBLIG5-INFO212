@@ -43,5 +43,5 @@ def delete_car(request, id):
     theCar.delete()
     return Response(status=status.HTTP_204_NO_CONTENT)
 
-def order_car(customer_id, car_id):
-    if customer_id
+# def order_car(customer_id, car_id):
+#     if customer_id
