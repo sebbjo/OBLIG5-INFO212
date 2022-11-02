@@ -4,9 +4,19 @@ from .models import Car
 
 class CarSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Car
+        model = car
         fields = ['id', 'make', 'carmodel', 'year', 'location', 'status']
 
+class CustomerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = car
+        fields = ['name', 'address', 'age']
+        
+class EmployeeSerializer(serializers.ModelSerializer): 
+    class Meta:
+        model = employee
+        fields = ['name', 'age', 'branch']
+        
 # class CustomerSerializer(serializers.ModelSerializer):
 #     class Meta:
 #         model = Customer
