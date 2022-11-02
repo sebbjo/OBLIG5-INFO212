@@ -18,6 +18,12 @@ from django.urls import path
 from .views import get_cars
 from .views import update_car
 from .views import delete_car
+from .views import get_customer
+from .views import update_customer
+from .views import delete_customer
+from .views import get_employee
+from .views import update_employee
+from .views import delete_employee
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -25,5 +31,11 @@ urlpatterns = [
     path("save_car/", get_cars),
     path("update_car/<int:id>", update_car),
     path("delete_car/<int:id>", delete_car),
+    path("customer/", get_customer),
+    path("update_customer/", update_customer),
+    path("delete_customer/", delete_customer),
+    path("employee/", get_employee),
+    path("update_employee/", update_employee),
+    path("delete_employee/", delete_employee),
 
 ]
