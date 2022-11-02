@@ -4,12 +4,12 @@ from .models import Car
 
 class CarSerializer(serializers.ModelSerializer):
     class Meta:
-        model = car
+        model = Car
         fields = ['id', 'make', 'carmodel', 'year', 'location', 'status']
 
 class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Car
+        model = Customer
         fields = ['id', 'name', 'address', 'age']
         
 class EmployeeSerializer(serializers.ModelSerializer): 
