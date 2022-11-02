@@ -42,3 +42,40 @@ def delete_car(request, id):
         return Response(status=status.HTTP_404_NOT_FOUND)
     theCar.delete()
     return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['GET'])
+def get_customers(request):
+    customers = Customer.objects.all()
+    # customer = Customer.objects.all()
+    serializer = CustomerSerializer(customers, many=True)
+    print(serializer.data)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['POST'])
+def save_customer(request):
+    serializer = CustomerSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+@api_view(['PUT'])
+def update_car(request, id):
+    try:
+        theCustomer = Customer.objects.get(pk=id)
+    except Customer.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    serializer = CustomerSerializer(theCustomer, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
+    else:
+        return Response(status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['DELETE'])
+def delete_customer(request, id):
+    try:
+        theCustomer = Customer.objects.get(pk=id)
+    except Customer.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    theCustomer.delete()
+    return Response(status=status.HTTP_204_NO_CONTENT)
