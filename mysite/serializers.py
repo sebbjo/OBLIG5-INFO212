@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Car
-# from .models import Customer
+from .models import Customer
 
 class CarSerializer(serializers.ModelSerializer):
     class Meta:
