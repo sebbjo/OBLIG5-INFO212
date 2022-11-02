@@ -58,7 +58,7 @@ def save_customer(request):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     
 @api_view(['PUT'])
-def update_car(request, id):
+def update_customer(request, id):
     try:
         theCustomer = Customer.objects.get(pk=id)
     except Customer.DoesNotExist:
