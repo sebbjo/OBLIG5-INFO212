@@ -44,7 +44,7 @@ def delete_car(request, id):
     return Response(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET'])
-def get_customers(request):
+def get_customer(request):
     customers = Customer.objects.all()
     serializer = CustomerSerializer(customers, many=True)
     print(serializer.data)
