@@ -1,5 +1,6 @@
 from .models import Car
 from .models import Customer
+from .models import Employee
 from rest_framework.response import Response
 from .serializers import CarSerializer
 from rest_framework import status
