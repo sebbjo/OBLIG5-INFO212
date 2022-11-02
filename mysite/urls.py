@@ -25,6 +25,5 @@ urlpatterns = [
     path("save_car/", get_cars),
     path("update_car/<int:id>", update_car),
     path("delete_car/<int:id>", delete_car),
-    path("order_car/"), order_car),
 
 ]
