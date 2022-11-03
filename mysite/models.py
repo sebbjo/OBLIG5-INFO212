@@ -13,7 +13,7 @@ class Car(models.Model):
 
     
 class Customer(models.Model):
-    customer_id = models.Charfield(max_length=10)
+    customer_id = models.CharField(max_length=10)
     name = models.CharField(max_length=50)
     age = models.CharField(max_length=3)
     address = models.CharField(max_length=50)
