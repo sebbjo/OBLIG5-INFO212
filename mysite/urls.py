@@ -24,6 +24,7 @@ from .views import delete_customer
 from .views import get_employee
 from .views import update_employee
 from .views import delete_employee
+from .views import order_car
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -37,5 +38,5 @@ urlpatterns = [
     path("employee/", get_employee),
     path("update_employee/", update_employee),
     path("delete_employee/", delete_employee),
-
+    path("order_car/", order_car)
 ]
