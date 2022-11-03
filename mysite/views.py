@@ -107,7 +107,7 @@ def save_employee(request):
 @api_view(['PUT'])
 def update_employee(request, id):
     try:
-        theEmployee = Employeer.objects.get(pk=id)
+        theEmployee = Employee.objects.get(pk=id)
     except Employee.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
     serializer = EmployeeSerializer(theEmployee, data=request.data)
