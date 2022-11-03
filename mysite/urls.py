@@ -53,7 +53,7 @@ urlpatterns = [
     path("delete_employee/", delete_employee),
     path("save_employee/", save_employee),
 
-    path("order_car/", order_car)
+    path("order_car/", order_car),
     path("rent_car/", rent_car),
     path("cancel_order/", cancel_ordered_car),
     path("return_car/", return_car), 
