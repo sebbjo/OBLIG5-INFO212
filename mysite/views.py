@@ -1,10 +1,11 @@
 from .models import Car
 from .models import Customer
 from .models import Employee
-from rest_framework.response import Response
+from .models import Order_car
 from .serializers import CarSerializer
-from rest_framework import status
 from django.http import JsonResponse
+from rest_framework.response import Response
+from rest_framework import status
 from rest_framework.decorators import api_view
 
 @api_view(['GET'])
@@ -114,3 +115,14 @@ def delete_employee(request, id):
         return Response(status=status.HTTP_404_NOT_FOUND)
     theEmployee.delete()
     return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+@api_view(["POST"])
+def order_car(request):
+    order_serializer = Order_carSerializer(data= request.data)
+    car_id = request.data['car']
+    customer_id = request.data['customer']
+    
+
+
+
