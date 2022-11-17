@@ -10,7 +10,6 @@ class Car(models.Model):
     def __str__(self):
         return self.make + ' ' + self.carmodel + ' ' + self.year + ', ' + self.location + ', ' + self.status
 
-    
 class Customer(models.Model):
     name = models.CharField(max_length=50)
     age = models.CharField(max_length=3)
@@ -19,20 +18,18 @@ class Customer(models.Model):
     def __str__(self):
         return self.name + ', ' + self.age + ', ' + self.address
 
-    
 class Employee(models.Model):
-    employee_id = models.CharField(max_length=10)
     name = models.CharField(max_length=50)
     address = models.CharField(max_length=50)
     branch = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.employee_id + ', ' + self.name + ', ' + self.address + ', ' + self.branch
+        return self.name + ', ' + self.address + ', ' + self.branch
 
-    
 class Order_car(models.Model):
-    car_id = models.CharField(max_length=7) # registration number
+    car_id = models.CharField(max_length=8)  # registration number
     customer_id = models.CharField(max_length=10)
 
     def __str__(self):
         return str(self.car_id) + " " + str(self.customer_id)
+    
