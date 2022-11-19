@@ -37,6 +37,5 @@ urlpatterns = [
     path("rent_car/", rent_car),
     path("cancel_order/", cancel_ordered_car),
     path("return_car/", return_car),
-    path("test/", test)
 
 ]
